@@ -1,0 +1,48 @@
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 2: SQL Injection Prevention</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🛡️ SQL Injection Simulation</h1>
+    <p>เปรียบเทียบโค้ดที่ปลอดภัยและไม่ปลอดภัย</p>
+  </header>
+
+  <main class="grid">
+    <section class="code-section">
+      <h2>🔓 Vulnerable Query</h2>
+      <pre id="vuln-code"></pre>
+    </section>
+
+    <section class="code-section secure">
+      <h2>🔐 Secure Query</h2>
+      <pre id="secure-code"></pre>
+    </section>
+  </main>
+
+  <section class="form-section">
+    <h2>🔍 ทดลองการโจมตี SQL Injection</h2>
+    <form id="loginForm">
+      <label for="username">ชื่อผู้ใช้</label>
+      <input type="text" id="username" placeholder="เช่น: admin' OR '1'='1' --" required />
+
+      <label for="password">รหัสผ่าน</label>
+      <input type="password" id="password" required />
+
+      <div class="btns">
+        <button type="button" class="btn red" onclick="testVulnerable()">Run Vulnerable</button>
+        <button type="button" class="btn green" onclick="testSecure()">Run Secure</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>Lab โดยนักศึกษาวิชา Web Security</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
